@@ -1,0 +1,27 @@
+判斷輸入的字串是否合乎palindrome(回文)
+若是，回傳“Yes”，否則回傳“No”
+觀念：
+  前半段：W, push W之每一字元
+  若為奇數長度字串：多skip一個字元
+  後半段：
+    檢查是否為W’
+    token必須與Top(s)相同
+    若不同⇒No,同⇒pop
+
+
+{
+  n=strlen(input string); //字串長度
+  for i=1 to n/2 do
+    {
+      x = NextToken(input);
+      push(s, x);
+    }
+  if (n%2)==1 then X=NextToken(input); //奇數長度字串skip
+  for i=1 to n/2 do;
+    {
+      x = NextToken(input);
+      if (pop(s)≠x) then return “No”;
+    }
+  return “Yes”;
+} //Time=O(n), n=input length
+      
