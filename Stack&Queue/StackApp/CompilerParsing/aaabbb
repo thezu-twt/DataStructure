@@ -1,0 +1,43 @@
+判斷input string (只含a與b)是否合乎{a^n,b^n|n≥1}
+其中：
+    a^n:表a出現n次
+    b^n:表b出現n次
+    且a一率在b之前
+正確：ab, aabb, aaabbb,…
+錯誤：aabbb, aaabb, ababab
+觀念：
+flag=0; //尚未遇b之state
+式子尚未scan完:
+   a:
+     if (flag==1) then “NO” (a未在b之前)
+     else push(a)
+   b:
+     flag=1; //表已預見b
+     if Isempty(y) then “NO” (無法pop, b多)
+     else pop,
+scan完:
+  if Isempty(s) then “Yes”
+  else “NO” (a多)
+
+
+{
+  flag=0;
+  while (input尚未scan完)
+  {
+    x=NextToken(input);
+    if (x==‘a’) then
+      {
+        if (flag==1) then return “NO”;  //a在b後出現
+        push(s, x);
+      }
+    else //x==‘b’
+      {
+        flag=1;
+        if Isempty(s) then return “NO”;  //b多
+        pop(s);
+      }
+  }
+  if Isempty(s) then return “Yes”;
+  else return “NO”;	                     //a多
+}  
+      
