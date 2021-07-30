@@ -17,7 +17,7 @@
 ||[Stack應用](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue/StackApp)||
 |Queue|||
 ### Stack應用
->[Infix轉Postfix](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/InfixtoPostfix)<br>
+>[Infix 轉 Postfix](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/InfixtoPostfix)<br>
 >[Postfix Evaluation](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/PostfixEvaluation)<br>
 >[Compiler Parsing 編譯器分析](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue/StackApp/CompilerParsing)<br>
 >>[Parentheses](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/CompilerParsing/Parentheses)<br>
