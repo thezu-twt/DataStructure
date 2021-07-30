@@ -1,0 +1,87 @@
+1.判斷輸入的括號配對字串（“(”及“)”）是否valid(正確)
+  若是，回傳“Yes”，否則回傳“No”
+  invalid:
+  (1)累計之右括號數>左括號數
+  (2)左括號總數>右括號總數
+  觀念：式子尚未scan完: 遇“(”⇒ push
+                     遇“)”pop, 但如果無法pop，必“No”(error type ⒈)
+          scan完: if Isempty(S) then “Yes”
+                  else “No”(error type ⒉)
+while (Input尚未由左而右scan完)
+{
+  x=NextToken(input);
+  if (x==“(”) then push (s, x);
+  else //x是“)”
+     { if Isempty(S) then return “No”;
+       pop(S);
+     }
+}
+if Isempty(S) then return “Yes”;
+else return “No”;
+// Time:O(n), n=input length
+
+2.判斷輸入的字串是否合乎palindrome(回文)
+  若是，回傳“Yes”，否則回傳“No”
+  觀念：前半段：W, push W之每一字元
+       若為奇數長度字串：多skip一個字元
+       後半段：檢查是否為W’
+              token必須與Top(s)相同
+              若不同⇒No,同⇒pop
+
+{
+  n=strlen(input string); //字串長度
+  for i=1 to n/2 do
+    {
+      x = NextToken(input);
+      push(s, x);
+    }
+  if (n%2)==1 then X=NextToken(input); //奇數長度字串skip
+  for i=1 to n/2 do;
+    {
+      x = NextToken(input);
+      if (pop(s)≠x) then return “No”;
+    }
+  return “Yes”;
+} //Time=O(n), n=input length
+      
+3.判斷input string (只含a與b)是否合乎{a^n,b^n|n≥1}
+		其中：a^n:表a出現n次
+				 b^n:表b出現n次
+				 且a一率在b之前
+		正確：ab, aabb, aaabbb,…
+		錯誤：aabbb, aaabb, ababab
+		觀念：flag=0; //尚未遇b之state
+         式子尚未scan完: a ⇒ if (flag==1) then “NO” (a未在b之前)
+                            else push(a)
+                       b ⇒ flag=1; //表已預見b
+                           if Isempty(y) then “NO” (無法pop, b多)
+                           else pop,
+             scan完：if Isempty(s) then “Yes”
+                     else “NO” (a多)
+
+{
+  flag=0;
+  while (input尚未scan完)
+  {
+    x=NextToken(input);
+    if (x==‘a’) then
+      {
+        if (flag==1) then return “NO”;  //a在b後出現
+        push(s, x);
+      }
+    else //x==‘b’
+      {
+        flag=1;
+        if Isempty(s) then return “NO”;  //b多
+        pop(s);
+      }
+  }
+  if Isempty(s) then return “Yes”;
+  else return “NO”;	                     //a多
+}  
+      
+      
+      
+      
+      
+      
