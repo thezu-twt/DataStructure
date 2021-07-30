@@ -21,3 +21,10 @@ int Fac (int n)
 			else //n>0
 			return Fac (n-1) * n;
 		}
+
+⑶ 
+write a recursive algo./code for sum(n) = 1+2+3+…+n; 且 sum(0)=0
+int sum (int n)
+	{ if (n==0) return 0;
+	  else return sum (n-1) + n;
+	}
