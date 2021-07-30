@@ -10,7 +10,7 @@
 |Towers of Hanoi 河內塔問題|[TowersofHanoi](https://github.com/thezu-twt/DS_1/blob/main/Math/TowersofHanoi)||
 |Permutation 排列組合|[Permutation](https://github.com/thezu-twt/DS_1/blob/main/Math/Permutation)||
 
-##[Stack&Queue](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue)
+## [Stack&Queue](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue)
 |category|Code|Note|
 |---|---|---|
 |Stack|[Stack製作](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/Stack)|Create(S)<br>push(S, item)<br>pop(S)<br>Isempty(S)<br>IsFull(S)<br>|
