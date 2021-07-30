@@ -17,6 +17,7 @@
 |---|---|---|
 |Stack|[Stack製作](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/Stack)|Create(S)<br>push(S, item)<br>pop(S)<br>Isempty(S)<br>IsFull(S)<br>|
 ||[Stack應用](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue/StackApp)|[Infix轉Postfix](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/InfixtoPostfix)<br>[Postfix Evaluation](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/PostfixEvaluation)<br>[Compiler Parsing](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue/StackApp/CompilerParsing)<br>|
+
 #Compiler Parsing 編譯器分析
 >[Parentheses](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/CompilerParsing/Parentheses)<br>
 >[Palindrome](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/CompilerParsing/Palindrome)<br>
