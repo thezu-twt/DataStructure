@@ -1,0 +1,25 @@
+判斷輸入的括號配對字串（“(”及“)”）是否valid(正確)
+若是，回傳“Yes”，否則回傳“No”
+invalid:
+  (1)累計之右括號數>左括號數
+  (2)左括號總數>右括號總數
+觀念:
+式子尚未scan完:
+  遇“(”⇒ push
+  遇“)”pop, 但如果無法pop，必“No”(error type ⒈)
+scan完:
+  if Isempty(S) then “Yes”
+  else “No”(error type ⒉)
+
+
+while (Input尚未由左而右scan完)
+{
+  x=NextToken(input);
+  if (x==“(”) then push (s, x);
+  else //x是“)”
+     { if Isempty(S) then return “No”;
+       pop(S);
+     }
+}
+if Isempty(S) then return “Yes”;
+else return “No”; // Time:O(n), n=input length
