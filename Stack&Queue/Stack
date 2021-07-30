@@ -1,0 +1,57 @@
+[法一]:利用Array
+
+⑴ Create (s)：
+   即宣告S:   array  [1…n]/[0…n] of item
+				Top: int  , 初值=0/-1
+        
+⑵	push(s, item) //item加入s, 成為新Top元素
+	{	if (Top==n) then return “S is Full”
+		else	{	Top = Top + 1;
+						S [Top] = item;
+					}
+	} //Time:O(1)
+  
+⑶	pop(s)
+  { if (Top==0) then return “S is empty”;
+		else { item = S [Top];
+           Top = Top - 1;
+           return item;
+         }
+   } //Time:O(1)
+
+[法二]：利用Link List
+
+⑴	Create(s):
+   宣告：Node(節點) 結構
+        Data欄位：存放資料值
+        Next欄位：指標(pointer)指向下一個Node位址
+        note：若以C語言來看，存int type資料
+              Struct Node
+              {	int Data;
+                Struct Node *Next;
+              };
+        Top：pointer, 初值=Nil (NULL/空)
+        
+⑵	push(s, item)
+   { t=New (Node); //向系統要求配置一個Node空間組合t指標指著(或New(t);)
+     t ➞ Data = item;
+     t ➞ Next = Top;
+     Top = t;
+    } //Time:O(1)
+    
+⑶	pop(s)
+   { if (Top==Nil) then return “S空”;
+     else { t = Top;
+            item = Top ➞ Data;
+            Top = Top ➞ Next;
+            Delete (t); //回收t所指的Node空間
+            return item;
+          }
+   } //Time:O(1)
+        
+        
+        
+        
+        
+        
+        
