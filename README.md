@@ -1,4 +1,4 @@
-# DS
+# Data Stucture
 ## [Math](https://github.com/thezu-twt/DS_1/tree/main/Math)
 |category|Code|Note|
 |---|---|---|
