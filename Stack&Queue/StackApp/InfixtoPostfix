@@ -1,24 +1,26 @@
 while (Infix尚未由左而右scan完)
 {
-  x=NextToken (Infix);
-  if (x是operand) then print(x);
+  x = NextToken (Infix);
+  if ( x是operand ) then print(x);
   else //x是operator
-    if ( x==“)” ) then
-        { repeat
-          y=pop(s);
-          if (y≠“(”) then print (y);  //非左括號就印
-          until (y==“(”)              //直到y是“(”才exit
+     if ( x == “)” ) then
+        {
+           repeat
+           y=pop(s);
+           if ( y ≠ “(” ) then print (y); //非左括號就印
+           until ( y == “(” )             //直到y是“(”才exit
         }
     else  //x是其他operators
-        switch (比較優先權(x, Top(s)))
-         { case “>”: push (s, x);
-                     break;
-           case “<=”:repeat
-                     y=pop(s);
-                     print (y);
-                     until (x>Top(s))
-                     push(s, x);
-					}
+        switch ( 比較優先權 ( x, Top(s) ) )
+         {
+           case “>”:  push (s, x);
+                      break;
+           case “<=”: repeat
+                      y=pop(s);
+		      print (y);
+		      until ( x > Top(s) )
+		      push(s, x);
+         }
 } // end while
 while (NOT Isempty(s))
 {
