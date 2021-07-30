@@ -1,5 +1,5 @@
 # Data Stucture
-## [Math](https://github.com/thezu-twt/DS_1/tree/main/Math)
+## [Math](https://github.com/thezu-twt/DS/tree/main/Math)
 |category|Code|Note|
 |---|---|---|
 |Factorial 階層|[Factorial](https://github.com/thezu-twt/DS_1/blob/main/Math/Factorial)||
