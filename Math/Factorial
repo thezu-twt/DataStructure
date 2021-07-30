@@ -1,4 +1,4 @@
-> ⑴ write down a non-recursive algo./code for n!
+## ⑴ write down a non-recursive algo./code for n!
 
 int Fac (int n)
  { if (n==0) return 1;
