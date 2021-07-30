@@ -13,18 +13,9 @@
 ## [Stack&Queue](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue)
 |category|Code|Note||
 |---|---|---|
-|Stack
-  |[Stack製作](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/Stack)
-    |1.利用Array<br>2.利用Link List<br>
-      |Create(S)<br>push(S, item)<br>pop(S)<br>Isempty(S)<br>IsFull(S)<br>|
-|
-  |[Stack應用](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue/StackApp)|
-    |
-      |
-|Queue
-  |
-    |
-      |
+|Stack|[Stack製作](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/Stack)|利用Array<br>利用Link List<br>|Create(S)<br>push(S, item)<br>pop(S)<br>Isempty(S)<br>IsFull(S)<br>|
+||[Stack應用](https://github.com/thezu-twt/DS_1/tree/main/Stack%26Queue/StackApp)|||
+|Queue||||
 ### Stack應用
 >[Infix 轉 Postfix](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/InfixtoPostfix)<br>
 >[Postfix Evaluation](https://github.com/thezu-twt/DS_1/blob/main/Stack%26Queue/StackApp/PostfixEvaluation)<br>
