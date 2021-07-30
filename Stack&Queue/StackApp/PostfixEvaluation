@@ -1,0 +1,11 @@
+while (Postfix尚未由左而右scan完)
+{
+  x=NextToken(Postfix);
+  if (x是operand) then push(s, x);
+  else //x是operator
+   { pop適當數目之operands;
+     執行對應operator之計算;
+     push (s, 計算結果);
+   }
+} //stack內之值即結果
+// Time=O(n), n=postfix length
