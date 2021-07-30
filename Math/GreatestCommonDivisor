@@ -1,0 +1,7 @@
+GCD(A,B) = B, if (A mod B)=0
+				 = GCD(B, A mod B), otherwise
+
+int GCD(int A, int B)
+ { if ((A%B)==0 return B;
+   else GCD(B, (A%B));
+ }
