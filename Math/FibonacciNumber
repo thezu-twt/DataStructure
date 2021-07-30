@@ -1,7 +1,6 @@
-Fibonacci Number (費伯那西數、費氏數列)
 F(n)= 0, if n=0
-		 	1, if n=1
-		 	F(n-1) + F(n-2), if n>1
+      1, if n=1
+      (n-1) + F(n-2), if n>1
       
 int F(int n)
  { int A[n+1];
