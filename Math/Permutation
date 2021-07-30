@@ -1,16 +1,19 @@
-Write a recursive algo./code print permutation of n data
 // n個data輪流當head，期後皆(n-1)個data之perm
 
 void Perm (char list[], int i, int n)  //列印 list[i] ~ list[n] 之排列組合
- { if (i==n)
-     { for (j=1; j<=n;j++)
-       printf ( list[j] );
-     }//列印整個list當時內容
-	 else // i<n
-     {	for (j=i; j<=n; j++)
-        {	SWAP (list[i], list[j]);     //list[j]當head
-          Perm (list, i+1, n);         //後面剩下的排列組合(i=n時終止)
-          SWAP (list[i], list[j]);     //還原成原list[]內容
+{
+  if (i==n)
+    {
+      for (j=1; j<=n;j++)
+      printf ( list[j] );
+    }//列印整個list當時內容
+  else // i<n
+    {
+      for (j=i; j<=n; j++)
+        {
+          SWAP (list[i], list[j]);     //list[j]當head
+	  Perm (list, i+1, n);         //後面剩下的排列組合(i=n時終止)
+	  SWAP (list[i], list[j]);     //還原成原list[]內容
         }
      }
- }
+}
