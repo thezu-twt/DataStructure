@@ -11,7 +11,7 @@
 |Permutation 排列組合|[Permutation](https://github.com/thezu-twt/DS/blob/main/Math/Permutation)||
 
 ## [Stack & Queue](https://github.com/thezu-twt/DS/tree/main/Stack%26Queue)
-|category|Code|Note||
+|category|Code|Details|Note|
 |---|---|---|---|
 |Stack|[Stack製作](https://github.com/thezu-twt/DS/blob/main/Stack%26Queue/Stack)|1) 利用Array<br>2) 利用Link List<br>|Create(S)<br>push(S, item)<br>pop(S)<br>Isempty(S)<br>IsFull(S)<br>|
 ||[Stack應用](https://github.com/thezu-twt/DS/tree/main/Stack%26Queue/StackApp)|[Infix 轉 Postfix](https://github.com/thezu-twt/DS/blob/main/Stack%26Queue/StackApp/InfixtoPostfix)<br>[Postfix Evaluation](https://github.com/thezu-twt/DS/blob/main/Stack%26Queue/StackApp/PostfixEvaluation)<br>[Compiler Parsing 編譯器分析](https://github.com/thezu-twt/DS/tree/main/Stack%26Queue/StackApp/CompilerParsing)<br>||
@@ -24,7 +24,7 @@
 >[aaabbb](https://github.com/thezu-twt/DS/blob/main/Stack%26Queue/StackApp/CompilerParsing/aaabbb)
 
 ## [Tree and Binary Tree](https://github.com/thezu-twt/DS/tree/main/Tree%26BinaryTree)
-|category|Code|Note||
+|category|Code|Details|Note|
 |---|---|---|---|
 |Tree|[Tree表示](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/TreeExpression)|||
 |二元樹追蹤|[B.T. Traversal](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversal)||遞迴(Stack)<br>·Preorder(DLR)<br>·Inorder(LDR)<br>·Postorder(LDR)<br>非遞迴(Queue)<br>·Level-Order|
