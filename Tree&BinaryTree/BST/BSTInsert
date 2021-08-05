@@ -1,0 +1,25 @@
+
+Struct node* insert(struct node *root, int x)
+{
+  if (root==NULL) return new_node(x);
+  else  if (x>root->Data)
+          root->rchild = insert(root->rchild, x);
+        else
+          root->lchild = insert(root->lchild, x);
+  return root;
+}
+Struct node* new_node(int x)
+{
+  struct node *p;
+  p = malloc (sizeof(Struct node));
+  p->Data = x;
+  p->lchild = NULL;
+  p->rchild = NULL;
+  return p;
+}
+Struct node
+{
+  int Data;
+  Struct node *rchild;
+  Struct node *lchild;
+}
