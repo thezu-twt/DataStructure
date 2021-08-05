@@ -1,5 +1,4 @@
-⑴
-// write down a non-recursive algo./code for n!
+// non-recursive
 
 int Fac (int n)
 {
@@ -14,10 +13,12 @@ int Fac (int n)
 }
 
 
-⑵
-// write a recursive algo./code
-/* def:n!=1, if (n=0) //初值，終止條件
-       n!=(n-1)!*n, if(n>0)
+
+//recursive
+/* 
+def:
+n! =1, if (n=0) //初值，終止條件
+   =(n-1)!*n, if(n>0)
 */
 
 int Fac (int n)
@@ -27,8 +28,8 @@ int Fac (int n)
     return Fac (n-1) * n;
 }
 
-⑶ 
-//write a recursive algo./code for sum(n) = 1+2+3+…+n; 且 sum(0)=0
+
+//recursive for sum(n) = 1+2+3+…+n, and sum(0)=0
 
 int sum (int n)
 {
