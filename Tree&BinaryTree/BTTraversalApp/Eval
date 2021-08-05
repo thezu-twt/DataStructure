@@ -1,0 +1,25 @@
+// 針對an Expression B.T.寫出求值之recursive algo.
+// Node Structure再加一個res欄位：保存子樹結果值or Leaf運算元值: |Lchild|Data|res|Rchild
+// Data欄: 存operator or operand Name
+
+Eval(T:Express B.T.)
+{
+  if (T!=Nil) then
+  {
+    Eval(T->Lchild);
+    Eval(T->Rchild);
+    switch(T->Data)
+    {
+      case "operand Name":
+          T->res = 變數/常數值;
+      case "+":
+          T->res=(T->Lchild)->res + (T->Rchild)->res;
+      case "-":
+          T->res=(T->Lchild)->res - (T->Rchild)->res;
+      case "*":
+          T->res=(T->Lchild)->res * (T->Rchild)->res; //加, 減, 乘, 除, 冪次, 大於, 小於...
+      case "~":
+          T->res=~(T->rchild)->res; //負號: 單一運算元
+    }
+  }
+}
