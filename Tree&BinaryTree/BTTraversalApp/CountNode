@@ -1,0 +1,10 @@
+Count(T)
+{
+  if (T==Nil) then return 0;
+  else
+  {
+    nL = Count(T->lchild);
+    nR = Count(T->rchild);
+    return (nL+nR+1);
+  }
+} 
