@@ -3,8 +3,8 @@ Height(T)
   if (T==Nil) then return 0;
   else
   {
-    HL = Height(T->lchild);
-    HR = Height(T->rchild);
+    HL = Height(T->Lchild);
+    HR = Height(T->Rchild);
     return MAX(HL, HR)+1;
   }
 } 
