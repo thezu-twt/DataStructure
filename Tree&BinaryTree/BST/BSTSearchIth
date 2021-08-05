@@ -1,0 +1,14 @@
+Search(T：BST, i：int)
+{
+  if (T!=Nil) then
+  {
+    k = T->lsize+1;                   //即樹根是kth小的Data
+    if (i==k) then return T->Data;   //root即是ith小
+    else if (i<k) then return Search(T->lchild, i);
+    else // i>k
+      return Search(T->child, i-k);
+  }
+}
+// Time:
+// Worst case：O(n) //skewed
+// Best case：O(logn)
