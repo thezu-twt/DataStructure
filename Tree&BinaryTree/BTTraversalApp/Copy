@@ -5,8 +5,8 @@ Copy(orig: B.T. Root)
   {
     new(t);
     t->Data = orig->Data;
-    t->lchild = Copy(orig->lchild);
-    t->rchild = Copy(orig->rchild);
+    t->Lchild = Copy(orig->Lchild);
+    t->Rchild = Copy(orig->Rchild);
   }
 } 
 // Time：O(n), n＝B.T. Node數
