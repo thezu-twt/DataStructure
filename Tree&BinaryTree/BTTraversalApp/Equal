@@ -1,4 +1,4 @@
-Equal(S, T: B.Y. root)
+Equal(S, T: B.T. root)
 {
   res = "No";
   if (S==Nil and T==Nil) then res = "Yes";
