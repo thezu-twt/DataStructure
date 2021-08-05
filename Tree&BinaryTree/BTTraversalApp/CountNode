@@ -3,8 +3,8 @@ Count(T)
   if (T==Nil) then return 0;
   else
   {
-    nL = Count(T->lchild);
-    nR = Count(T->rchild);
+    nL = Count(T->Lchild);
+    nR = Count(T->Rchild);
     return (nL+nR+1);
   }
 } 
