@@ -1,13 +1,13 @@
 Copy(orig: B.T. Root)
 {
-	if (orig==Nil) then t=Nil;
-	else
-		{
-			new(t);
-			t ➞ Data=orig ➞ Data;
-			t ➞ lchild=Copy(orig ➞ lchild);
-			t ➞ rchild=Copy(orig ➞ rchild);
-		}
+  if (orig==Nil) then t = Nil;
+  else
+  {
+    new(t);
+    t->Data = orig->Data;
+    t->lchild = Copy(orig->lchild);
+    t->rchild = Copy(orig->rchild);
+  }
 } 
 // Time：O(n), n＝B.T. Node數
 // 因為B.T.是Preorder／Inorder／Postorder之應用
