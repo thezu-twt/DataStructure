@@ -1,0 +1,42 @@
+// B.T. Traversal algo. (Preorder, Inorder, Postorder)
+// 假設B.T.以Link list表示Node structure is |Lchild|Data|Rchild|
+// 原則:
+//  D：print Node ➞ Data
+//  L, R：Recursion of Lchild, Rchild
+
+Preorder (T:pointer to B.T. Root)
+{
+  if (T!=Nil) then
+  {
+    print(T ➞ Data);        //D
+    Preorder(T ➞ lchild);   //L
+    Preorder(T ➞ rchild);   //R
+  }
+}
+
+Inorder(T)
+{
+  if (T!=Nil) then
+  {
+    Inorder(T ➞ lchild);    //L
+    print(T ➞ Data);        //D
+    Inorder(T ➞ rchild);    //R
+  }
+}
+
+Postorder(T)
+{
+  if (T≠Nil) then
+  {
+    Postorder(T ➞ lchild);    //L
+    Postorder(T ➞ rchild);    //R
+    print(T ➞ Data);          //D
+  }
+}
+
+
+
+
+
+
+
