@@ -1,0 +1,7 @@
+// 例用BST實施Data排序
+// steps：
+//   將input data建成BST
+//   對BST實施Inorder traversal (中序追蹤)，即得小→大排序
+// 大→小
+//   [法一]：使用stack (反序)
+//   [法二]：改用RDL追蹤
