@@ -1,6 +1,8 @@
-//1利用Array製作
-//[法一]：Linear Array
 
+
+// 1.利用Array製作
+
+// [法一]：Linear Array
 Create(Q):
 宣告:
 Q: array [1..n] of items;
@@ -23,10 +25,16 @@ Dequeue(Q)
   item=Q[front];
   return item;
 }
-//Time:O(1)
+// Time:O(1)
+// 當rear==n成立時, 並不代表Q一定really full
+// 即當rear==n但Front>0時, 有Front個空格可用, 因此很浪費空間
+// 解決此問題之一個“直覺”作法為
+// 將[Front+1]~[rear]這些元素均左挪Front格, then rear = rear-Front, 且Front=0, 再重新Enqueue
+// 然而，此種做法卻造成enqueue之Time從O(1)變成O(n), 所以改用Circular Array來解決
 
-//[法二]：Circular Array (最多利用(n-1)格)
 
+
+// [法二]：Circular Array (最多利用(n-1)格)
 Create(Q)
 宣告：
 Q: array [0..(n-1)] of items;
@@ -55,15 +63,18 @@ Dequeue(Q)
       return item;
     }
 }
-//Time:O(1)
-
+// Time:O(1)
+// 分析:
+// 1.此時無法再加入item. 最多可以利用(n-1)格, 即Front所指之格不用
+// 2.若真的硬使用Front那格, 會造成當(Rear==Front)成立時, 無法區分出Q空或Q滿之情況(e.g.明明全滿，但卻無法刪除)
+// 3.Time: Enqueue及Dequeue均O(1)
+// 4.判斷Q空及Q滿之條件式寫法一樣
 
 //[法三]：Circular Array (最多利用n格)
-
 宣告：
-再多加一個Tag變數(Boolean Type),用以協助判斷Q空orQ滿當Rear==Front成立時
-Tag：0：初值 [空]
-Tag：1			 [滿]
+// 再多加一個Tag變數(Boolean Type), 用以協助判斷Q空orQ滿當Rear==Front成立時
+Tag：0：初值[空]
+Tag：1     [滿]
 
 Enqueue(Q, item)
 {
@@ -87,10 +98,14 @@ Dequeue(Q)
     return item;
   }
 }
+// 分析:
+// 最多可利用n格
+// Time:O(1) for Enqueue及Dequeue
+// 與[法二]相比, Enqueue及Dequeue中, 均額外多了一條if測試, 比較時間"次數"約為[法二]2倍, Time比較差了一點
 
-//2利用Link List製作
-//[法一]：Single Link List
 
+// 2.利用Link List製作
+// [法一]：Single Link List
 Create(Q)
 宣告：
 Node structure:|Data|Next|
@@ -98,13 +113,15 @@ Rear, Front: pointer=Nil;
 
 Enqueue(Q)
 //case1：Q原本為空
-//case2：Q原本非空
+//case2：Q原本非空:
+// Delete(t);
+// 回收t Node space, 為避免rear所指Node變Free Node (dangling), 應事先將Rear設為Nil
 {
   new(t);
   t → Data = item;
   t → Next = Nil;
-  if ( Front==Nil ) then Front = t; //case1
-  else Rear → Next = t; //case2
+  if ( Front==Nil ) then Front = t;	//case1
+  else Rear → Next = t; 		//case2
   Rear = t;
 }
 // Time: O(1)
@@ -124,11 +141,11 @@ Dequeue(Q)
 }
 // Time: O(1)
 // [法二]：Circular Link List
-//製作Queue之好處：只要用一個指標變數，即可知尾及前端Node所在,即Rear：尾端, Rear → Next：前端
+// 製作Queue之好處: 只要用一個指標變數, 即可知尾及前端Node所在, 即Rear: 尾端, Rear → Next:前端
 
 宣告：
-Node structure:	|Data|Next|
-Rear: pointer=Nil;
+Node structure:|Data|Next|
+Rear: pointer = Nil;
 
 Enqueue(Q, item)
 //case1：Q原本為空
@@ -136,8 +153,8 @@ Enqueue(Q, item)
 {
   new(t);
   t → Data = item;
-  if ( Rear==Nil ) then t → Next = t;     //case1
-  else  //case2
+  if ( Rear==Nil ) then t → Next = t;   //case1
+  else  				//case2
   {
     t → Next = Rear → Next;
     Rear → Next = t;
@@ -147,8 +164,9 @@ Enqueue(Q, item)
 //Time: O(1)
 
 Dequeue(Q)
-//case1：Q非空，且>1個Node
-//case2：Q中只右1個Node
+// case1: Q非空，且>1個Node
+// case2: Q中只右1個Node
+
 {
   if ( rear==Nil ) then return “Q空”;
   else
