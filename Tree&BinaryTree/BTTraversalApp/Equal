@@ -1,0 +1,11 @@
+Equal(S, T: B.Y. root)
+{
+  res = "No";
+  if (S==Nil and T==Nil) then res = "Yes";
+  else  if (S!=Nil and T!=Nil) then
+        if (S->Data == T->Data) then
+				if Equal(S->lchild, T->lchild) then
+          res=Equal(S → rchild, T → rchild);
+  return res;
+}
+// Time：O(n)
