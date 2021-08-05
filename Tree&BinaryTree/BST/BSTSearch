@@ -1,0 +1,18 @@
+Search(T:BST, x:key) //在T中尋找x，找到傳回Time，否則傳回False
+{
+  if (T!=Nil) then
+  {
+    switch (比較(x, T->Data))
+    {
+      case "==": return "true";   //找到
+      case "<": return Search(T->lchild, x);
+      case ">": return Search(T->rchild, x);
+    }
+  }
+  else return False;//Not found x
+}
+// Time case：
+// Worst case：O(n) (e.g. 當BST is skewed)
+// Best case：O(logn) (當BST is Full/Complete BST,AVL Tree, Red-Black Tree)
+// Avg. case：O(logn) (randomized Data：BST) [Algo.課本]
+// Note：search x in BST之Time也就決定了Insert x及Delete x時間, 所以三者Time一樣
