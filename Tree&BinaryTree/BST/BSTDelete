@@ -1,0 +1,10 @@
+// BST之Delete x運作
+// Steps:
+//   search for x之所在
+//   分為下列3個cases
+//    case1:  x是leaf, 則刪完x後, EXIT
+//    case2:  x是Degree-1 Node, 則刪x
+//            再將x的父點原本指向x的指標, 改成指向x的唯一子點, Exit
+//    case3:  x是Degree-2 Node
+//            則先以x的左子樹中之最大值(令為y), 以y取代x(或X的右子樹中之最小值)
+//            而這相當於刪y, 因為y是leaf or Degree-1之Node, 所以再回case1 or case2處理y之刪除
