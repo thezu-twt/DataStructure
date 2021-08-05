@@ -1,0 +1,173 @@
+//1利用Array製作
+//[法一]：Linear Array
+
+Create(Q):
+宣告:
+Q: array [1..n] of items;
+rear, front: int, 初值=0
+
+Enqueue(Q, item)
+{
+  if (rear==n) then return “Q滿”
+	else
+	{
+    rear=rear+1;
+    Q[rear]=item;
+	}
+}
+//Time:O(1)
+
+Dequeue(Q)
+{
+  if (front==rear) then return “Q空”
+  item=Q[front];
+  return item;
+}
+//Time:O(1)
+
+//[法二]：Circular Array (最多利用(n-1)格)
+
+Create(Q)
+宣告：
+Q: array [0..(n-1)] of items;
+rear, front: int; 初值=0;
+
+Enqueue(Q, item)
+{
+  Rear=(Rear+1)%n;
+  if (Rear==Front)
+  then
+  {
+    Rear = (Rear-1)%n; //避免覆蓋
+    return “Q滿”;
+  }
+  Q[Rear]=item;
+}
+//Time:O(1)
+
+Dequeue(Q)
+{
+    if (Front==Rear) then return “Q空”;
+    else
+    {
+      Front=(Front+1)%n;
+      item=Q[Front];
+      return item;
+    }
+}
+//Time:O(1)
+
+
+//[法三]：Circular Array (最多利用n格)
+
+宣告：
+再多加一個Tag變數(Boolean Type),用以協助判斷Q空orQ滿當Rear==Front成立時
+Tag：0：初值 [空]
+Tag：1			 [滿]
+
+Enqueue(Q, item)
+{
+  if (Rear==Front and Tag==1) then return “Q滿”;
+  else
+  {
+    Rear==(Rear+1)%n;
+    Q[Rear]=item;
+    if (rear==front) then Tag=1;
+  }
+}
+
+Dequeue(Q)
+{
+  if (Front==Rear and Tag==0) then return “Q空”;
+  else
+  {
+    Front=(Front+1)%n;
+    item=Q[Front];
+    if (Front==Rear) then Tag=0;
+    return item;
+  }
+}
+
+//2利用Link List製作
+//[法一]：Single Link List
+
+Create(Q)
+宣告：
+Node structure:|Data|Next|
+Rear, Front: pointer=Nil;
+
+Enqueue(Q)
+//case1：Q原本為空
+//case2：Q原本非空
+{
+  new(t);
+  t → Data = item;
+  t → Next = Nil;
+  if ( Front==Nil ) then Front = t; //case1
+  else Rear → Next = t; //case2
+  Rear = t;
+}
+// Time: O(1)
+
+Dequeue(Q)
+{
+  if ( Front==Nil) then return “Q空”;
+  else
+  {
+    t = Front;
+    item = Front Data;
+    Front = Front Next;
+    if (Front==Nil) then Rear=Nil;
+    Delete(t);
+    return item; 
+  }
+}
+// Time: O(1)
+// [法二]：Circular Link List
+//製作Queue之好處：只要用一個指標變數，即可知尾及前端Node所在,即Rear：尾端, Rear → Next：前端
+
+宣告：
+Node structure:	|Data|Next|
+Rear: pointer=Nil;
+
+Enqueue(Q, item)
+//case1：Q原本為空
+//case2：Q原本非空
+{
+  new(t);
+  t → Data = item;
+  if ( Rear==Nil ) then t → Next = t;     //case1
+  else  //case2
+  {
+    t → Next = Rear → Next;
+    Rear → Next = t;
+  }
+  Rear = t;
+}
+//Time: O(1)
+
+Dequeue(Q)
+//case1：Q非空，且>1個Node
+//case2：Q中只右1個Node
+{
+  if ( rear==Nil ) then return “Q空”;
+  else
+  {
+    t = Rear → Next;
+    item = (Rear → Next) → Data;
+    if ( Rear==Rear → Next) then Rear=Nil;    //Q只有一個Node
+    else Rear → Next = (Rear → Next) → Next;  //case1
+    Delete(t);
+    return item;
+  }
+}
+//Time: O(1)
+
+
+
+
+
+
+
+
+
