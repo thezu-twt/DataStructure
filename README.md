@@ -27,7 +27,23 @@
 |category|Code|Note||
 |---|---|---|---|
 |Tree|[Tree表示](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/TreeExpression)|||
-|二元樹追蹤|[B.T. Traversal](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversal)||遞迴(Stack)<br>Preorder(DLR)<br>Inorder(LDR)<br>Postorder(LDR)<br>非遞迴(Queue)<br>Level-Order|
+|二元樹追蹤|[B.T. Traversal](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversal)||遞迴(Stack)<br>·Preorder(DLR)<br>·Inorder(LDR)<br>·Postorder(LDR)<br>非遞迴(Queue)<br>·Level-Order|
+|二元樹追蹤應用|[B.T. Traversal Application](https://github.com/thezu-twt/DS/tree/main/Tree%26BinaryTree/BTTraversalApp)|
+[Copy a B.T.](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversalApp/Copy)<br>
+[two B.T. are Equal](https://github.com/thezu-twt/DS/blob/main/Tree&BinaryTree/BTTraversalApp/Equal)<br>
+[Count Node](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversalApp/CountNode)<br>
+[Count Leaf](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversalApp/CountLeaf)<br>
+[B.T. Height](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversalApp/Height)<br>
+[SWAP a B.T.](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversalApp/SWAP)<br>
+[Expression B.T.](https://github.com/thezu-twt/DS/blob/main/Tree%26BinaryTree/BTTraversalApp/Eval)<br>||
+
+
+
+
+
+
+
+
 
 
 
