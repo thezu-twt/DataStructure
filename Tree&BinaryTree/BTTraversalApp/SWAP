@@ -1,0 +1,11 @@
+SWAP(T)
+{
+  if (T!=Nil) then
+  {
+    SWAP(T->Lchild);
+    SWAP(T->Rchild);
+    temp = T->Lchild;
+    T->Lchild = T->Rchild;
+    T->Rchild = temp;
+  }
+}
