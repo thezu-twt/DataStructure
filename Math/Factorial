@@ -1,5 +1,4 @@
 // non-recursive
-
 int Fac (int n)
 {
  if (n==0) return 1;
@@ -29,6 +28,8 @@ int Fac (int n)
 }
 
 
+
+
 //recursive for sum(n) = 1+2+3+…+n, and sum(0)=0
 
 int sum (int n)
@@ -36,11 +37,6 @@ int sum (int n)
   if (n==0) return 0;
   else return sum (n-1) + n;
 }
- 
- 
- 
- 
- 
  
  
  
