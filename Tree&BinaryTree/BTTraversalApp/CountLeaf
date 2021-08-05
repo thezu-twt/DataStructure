@@ -3,8 +3,8 @@ Count(T)
   if (T==Nil) then return 0;
   else
   {
-    nL = Count(T->lchild);
-    nR = Count(T->rchild);
+    nL = Count(T->Lchild);
+    nR = Count(T->Rchild);
     if (nL+nR)==0 then return 1; //本身是Leaf
     else return (nL+nR);
   }
