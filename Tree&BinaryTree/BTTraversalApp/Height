@@ -1,0 +1,10 @@
+Height(T)
+{
+  if (T==Nil) then return 0;
+  else
+  {
+    HL = Height(T->lchild);
+    HR = Height(T->rchild);
+    return MAX(HL, HR)+1;
+  }
+} 
