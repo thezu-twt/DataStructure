@@ -1,0 +1,11 @@
+// Tree的表示方法
+// [法一]: 以Link List直接予以表示
+//        假設Tree’s Degree＝k, 則Node結構設計: |Data|Link1|Link2|…|Linkk|
+//        分析: 缺點是極度浪費Linking space (一堆Link是Nil)
+//        說明:
+//        令tree node個數=n, tree’s degree=k, 則總共的Linking space＝n*k條
+//        但實際有用的(非Nil)link數＝n-1條, 浪費的(Nil)link數＝n*k-(n-1)
+//        故，浪費比例 = (n*k-(n-1))/(n*k) = n*(k-1)+1/n*k ≈ (k-1)/k
+// [法二]: 將Tree化成Binary Tree (k＝2)，再予以儲存
+// [法三]： "Child-Sibling" 方法
+//        作法: Node結構定為 |Data|Child|Sibling|
