@@ -1,0 +1,57 @@
+// Use Stack to Implement Queue
+Enqueue(Q, item)
+{
+  if IsFull(S) then return “Queue滿”;
+  else push (S, item)
+}
+
+Dequeue(Q)
+{
+  if Isempty(T) then
+  if Isempty(S) then return “Q空”;
+  else while (NOT Isempty(S)) do
+  {
+    x = pop(S);
+    push(T, x);
+  }
+  item = pop(T); //即Queue之Front元素
+  return item;
+}
+// Time分析：
+// Enqueue(Q)之Time:O(1)
+// Dequeue(Q):  大部分case(T≠空)，只花O(1) time (因為pop(T))
+//              少部分cases(S≠空且T=空)，清光S, push入T，可能花O(n)
+//              以分攤時間來看，可視為O(1)
+
+
+// Use Queue to Implement Stack
+push(S, item)
+{
+  if IsFull(Q) then return “Stack Full”;
+  else Enqueue(Q, item);
+}
+
+pop(S)
+{
+//假設此處Queue是Array製作之Queue
+  if ( Isempty(Q) ) then return “Stack空”;
+  else
+  {
+    n = (Rear-Front+n)%n;     //Queue中元素個數
+    for i = 1 to (n-1) do
+    {
+      x = Dequeue(Q);
+      Enqueue(Q, x);
+    }
+    item = Dequeue(Q); //即Stack之Top元素
+    return item;
+  }
+}
+// Time分析：
+// push(S, item) Time = O(1)
+// 	pop(S) Time = O(n)
+
+
+
+
+
